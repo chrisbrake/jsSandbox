@@ -1,7 +1,7 @@
 ReporterOptions = {
   header: {
-      standard: 'standard', // Full headers all identifing details included
-      reduced: 'reduced', // Default, Only basic idenitifying features
+      standard: 'standard', // Full headers all identifying details included
+      reduced: 'reduced', // Default, Only basic identifying features
       none: 'none' // No data appended
   },
   url: {
