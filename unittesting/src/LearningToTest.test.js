@@ -1,3 +1,27 @@
+import mockAxios from "axios";
+import LearningToTest from "./LearningToTest";
+
+it("calls axios and returns images", async () => {
+    // setup
+    mockAxios.get.mockImplementationOnce( 
+        url => Promise.resolve(
+            { 
+                data: {
+                    results: ['cute.jpg'] 
+            }
+    }) );
+
+    // work
+    const images = LearningToTest("kittens");
+
+    // assertions / expects
+    //expect(images).toEqual(['cute.jpg']);
+    expect(mockAxios.get).toHaveBeenCalledTimes(1)
+    expect(mockAxios.get).toHaveBeenCalledWith(
+        "https://dog.ceo/api/breeds/image/random")
+});
+
+
 //import { add, total } from './App';
 
 const add = jest.fn(() => 3);
